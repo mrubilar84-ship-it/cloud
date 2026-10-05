@@ -1,0 +1,20 @@
+{
+  "proyecto": "Portico de ejemplo (valores de prueba)",
+  "materiales": {"acero": {"E": 2.0e8}},
+  "secciones": {
+    "COL": {"A": 0.0054, "I": 8.36e-5, "material": "acero"},
+    "VIGA": {"A": 0.0054, "I": 8.36e-5, "material": "acero"}
+  },
+  "nodos": {"1": [0, 0], "2": [0, 4], "3": [6, 4], "4": [6, 0]},
+  "apoyos": {"1": [1, 1, 1], "4": [1, 1, 1]},
+  "elementos": [
+    {"id": 1, "i": 1, "j": 2, "seccion": "COL"},
+    {"id": 2, "i": 2, "j": 3, "seccion": "VIGA"},
+    {"id": 3, "i": 4, "j": 3, "seccion": "COL"}
+  ],
+  "casos": {
+    "D": {"distribuidas": {"2": -12.0}},
+    "V": {"nodales": {"2": [8.0, 0, 0]}}
+  },
+  "combinaciones": {"1.4D": {"D": 1.4}, "1.2D+1.0V": {"D": 1.2, "V": 1.0}}
+}

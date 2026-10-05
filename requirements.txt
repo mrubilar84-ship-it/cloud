@@ -1,3 +1,4 @@
 ifcopenshell
 ezdxf
+openseespy
 pytest
