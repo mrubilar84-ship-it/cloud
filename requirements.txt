@@ -1,4 +1,5 @@
 ifcopenshell
 ezdxf
 openseespy
+anthropic
 pytest
