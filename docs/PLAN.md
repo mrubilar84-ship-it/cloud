@@ -15,6 +15,17 @@ Todo resultado requiere revisión y firma de un ingeniero responsable.
 - OpenSeesPy corre directo en Python; **Kaggle no es necesario** (solo sería útil para cálculos muy pesados).
 - Pendiente: 3D, verificación por norma (acero/hormigón), P-Δ, sismo, perfiles normalizados.
 
+## Fase 1c (hecha) — 3D, rótulas, apoyos y entrada DXF
+- `estructural/calculo/estructura3d.py`: barras 3D, apoyos por grado de libertad, rótulas
+  (liberación de `mx`/`my`/`mz` en extremos). Rótulas con resorte residual K_MIN=1e-3 kN·m/rad
+  (error en momentos ~1e-5 kN·m; evita singularidad en nodos totalmente articulados).
+- `estructural/modelos/dxf_lector.py`: convención de capas (`EL_<perfil>`, `APOYO_*`, `ROTULA`,
+  `CARGA_NODAL`, `CARGA_DIST`). Un DWG se guarda como DXF desde el programa CAD.
+- Uso: `python crear_dxf_demo.py` y luego
+  `python calcular3d.py ejemplos/demo.dxf ejemplos/secciones_demo.json memoria.md`
+- Validado contra soluciones analíticas (voladizo, empotrado-articulado, rótula intermedia).
+- Pendiente: interfaz gráfica (visor web 3D), losas/placas, diafragmas, verificación por norma.
+
 ## Fase 2 — API y n8n
 - API (FastAPI) que expone: subir IFC → listar elementos → calcular → informe.
 - Flujo n8n: webhook/archivo → API → agente IA (explica) → informe.

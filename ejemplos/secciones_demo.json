@@ -1,0 +1,7 @@
+{
+  "materiales": {"acero": {"E": 2.0e8, "G": 7.7e7}},
+  "secciones": {
+    "COL": {"A": 0.0054, "Iy": 8.36e-5, "Iz": 6.0e-6, "J": 2.0e-7, "material": "acero"},
+    "VIGA": {"A": 0.0054, "Iy": 8.36e-5, "Iz": 6.0e-6, "J": 2.0e-7, "material": "acero"}
+  }
+}
